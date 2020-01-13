@@ -10,5 +10,8 @@
     "editor.rulers": [80, 120,],
     // https://stackoverflow.com/questions/54430470/vs-code-python-autopep8-does-not-honor-2-spaces-hanging-indentation
     "python.formatting.autopep8Args": ["--indent-size=2"],
-    "terminal.integrated.inheritEnv": false
+    "terminal.integrated.inheritEnv": false,
+    "[cpp]": {
+        "editor.defaultFormatter": "Gruntfuggly.format-modified",
+    },
 }
