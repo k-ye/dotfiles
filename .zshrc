@@ -19,5 +19,9 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # https://github.com/zsh-users/zsh-syntax-highlighting
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-eval "$(rbenv init -)"
+# clang 11.0.3 (clang-1103.0.32.59) shipped after XCode 11.4 doesn't play well with Taichi LLVM bitcode,
+# therefore I have to pin clang at clang-1100.0.33.17 (shipped in XCode 11.3.1) when working on Taichi.
+alias "xccmd1131=sudo xcode-select --switch /Applications/Xcode_11.3.1.app/Contents/Developer"
+alias "xccmdhead=sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer"
 
+eval "$(rbenv init -)"
