@@ -25,3 +25,4 @@ alias "xccmd1131=sudo xcode-select --switch /Applications/Xcode_11.3.1.app/Conte
 alias "xccmdhead=sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer"
 
 eval "$(rbenv init -)"
+export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"

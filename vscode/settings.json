@@ -1,5 +1,5 @@
 {
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
@@ -11,10 +11,6 @@
     80,
     120,
   ],
-  // https://stackoverflow.com/questions/54430470/vs-code-python-autopep8-does-not-honor-2-spaces-hanging-indentation
-  "python.formatting.autopep8Args": [
-    "--indent-size=2"
-  ],
   "terminal.integrated.inheritEnv": false,
   "[cpp]": {
     "editor.defaultFormatter": "Gruntfuggly.format-modified",
@@ -23,4 +19,8 @@
   "C_Cpp.clang_format_fallbackStyle": "Google",
   "C_Cpp.clang_format_style": "Google",
   "clang-format.fallbackStyle": "Google",
+  "workbench.activityBar.visible": true,
+  "C_Cpp.updateChannel": "Insiders",
+  "cmake.configureOnOpen": true,
+  "python.formatting.provider": "yapf",
 }
