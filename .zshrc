@@ -26,3 +26,4 @@ alias "xccmdhead=sudo xcode-select --switch /Applications/Xcode.app/Contents/Dev
 
 eval "$(rbenv init -)"
 export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+# export PATH="$GITHUBPATH/depot_tools:$PATH"
