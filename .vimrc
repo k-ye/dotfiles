@@ -29,7 +29,8 @@ nnoremap ,m :NERDTreeToggle<CR>
 " Find the current file in tree
 nnoremap ,n :NERDTreeFind<CR>
 
-autocmd VimEnter * NERDTree
+" Uncomment this to enable NERDTree by default
+" autocmd VimEnter * NERDTree
 
 " https://github.com/fatih/vim-go/issues/494#issuecomment-124556989
 au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
