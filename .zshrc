@@ -6,6 +6,7 @@ if [ -f ~/.bash_profile ]; then
     . ~/.bash_profile;
 fi
 
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export GOPATH=$HOME/go
 export GITHUBPATH=$HOME/Github
 
