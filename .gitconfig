@@ -6,3 +6,7 @@
 
 [alias]
   lg = log --graph --oneline --all
+
+[include]
+	path = ~/.gitconfig.me
+
