@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # Customization Point 
 # ===================
 
+# https://stackoverflow.com/a/3483679/12003165
+bindkey \^U backward-kill-line
+
 # Show git branch. Refs:
 # https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt
 # https://stackoverflow.com/a/1128583/12003165
