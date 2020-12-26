@@ -1,48 +1,136 @@
-export PS1="%n@%~$ "
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# default="*?_-.[]~=/&;!#$%^(){}<>", remove '/' from it
-export WORDCHARS="*?_-.[]~=&;!#$%^(){}<>"
-if [ -f ~/.bash_profile ]; then 
-    . ~/.bash_profile;
-fi
+# Path to your oh-my-zsh installation.
+export ZSH="/home/yekuang/.oh-my-zsh"
 
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
-export GOPATH=$HOME/go
-export GITHUBPATH=$HOME/Github
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="robbyrussell"
 
-# Make Ctrl+U clears the line before the current cursor.
-# In zsh, Ctrl+U clears the entire line by defualt.
-# https://stackoverflow.com/questions/3483604/which-shortcut-in-zsh-does-the-same-as-ctrl-u-in-bash/3483679#3483679
-bindkey \^U backward-kill-line
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
-# https://github.com/zsh-users/zsh-autosuggestions
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-# https://github.com/zsh-users/zsh-syntax-highlighting
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
-# I've seen a few times where the latest Xcode toolchain either had a bad
-# performance or was completely broken for Taichi's usage. As a result,
-# `xccmd-taichi-stable` will always switch to a known good Xcode + clang toolchain.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
+# HYPHEN_INSENSITIVE="true"
+
+# Uncomment the following line to disable bi-weekly auto-update checks.
+# DISABLE_AUTO_UPDATE="true"
+
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
+# Uncomment the following line to change how often to auto-update (in days).
+# export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+# Uncomment the following line to disable colors in ls.
+# DISABLE_LS_COLORS="true"
+
+# Uncomment the following line to disable auto-setting terminal title.
+# DISABLE_AUTO_TITLE="true"
+
+# Uncomment the following line to enable command auto-correction.
+# ENABLE_CORRECTION="true"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+# COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
+# Uncomment the following line if you want to change the command execution time
+# stamp shown in the history command output.
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
+# HIST_STAMPS="mm/dd/yyyy"
+
+# Would you like to use another custom folder than $ZSH/custom?
+# ZSH_CUSTOM=/path/to/new-custom-folder
+
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# Add wisely, as too many plugins slow down shell startup.
 #
-# Broken log:
-# * clang version 12.0.0 (clang-1200.0.32.2) shipped with Xcode 12.0.1 (12A7300)
-# has regressed significantly in the STL containers (most noticeably std::vector).
-# Pin at Xcode 11.7 with clang-1103.0.32.62.
-# * clang version 11.0.3 (clang-1103.0.32.59) shipped with Xcode 11.4 doesn't play well with Taichi LLVM bitcode,
-# therefore I have to pin at clang-1100.0.33.17 (shipped in Xcode 11.3.1) when working on Taichi.
-alias "xccmd-taichi-stable=sudo xcode-select --switch /Applications/Xcode_11.7.app/Contents/Developer"
-alias "xccmdhead=sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer"
+# See also: https://www.tecmint.com/install-oh-my-zsh-in-ubuntu/
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
-eval "$(rbenv init -)"
-export PATH="/usr/local/opt/sphinx-doc/bin:$PATH"
+source $ZSH/oh-my-zsh.sh
 
-usedepot() {
-    export PATH="$GITHUBPATH/depot_tools:$PATH"
-}
+# User configuration
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+# export MANPATH="/usr/local/man:$MANPATH"
 
-    autoload -Uz compinit
-    compinit
+# You may need to manually set your language environment
+# export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+# if [[ -n $SSH_CONNECTION ]]; then
+#   export EDITOR='vim'
+# else
+#   export EDITOR='mvim'
+# fi
+
+# Compilation flags
+# export ARCHFLAGS="-arch x86_64"
+
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# ===================
+# Customization Point 
+# ===================
+
+# Set up prompt with colors
+# https://linux.die.net/man/1/zshmisc
+# %n: username
+# %~: $PWD
+# Color code: https://stackoverflow.com/a/49752003/12003165
+PROMPT="%F{227}%n@%F{078}%~%{$reset_color%}% $ "
+
+# Add CUDA 11.1 toolkits
+# https://docs.nvidia.com/cuda/archive/11.1.0/cuda-installation-guide-linux/index.html#environment-setup
+export PATH=/usr/local/cuda-11.1/bin${PATH:+:${PATH}}
+
+# Install Ruby Gems to ~/gems
+export GEM_HOME="$HOME/gems"
+export PATH="$HOME/gems/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/yekuang/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/yekuang/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/yekuang/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/yekuang/miniconda3/bin:$PATH"
+    fi
 fi
+unset __conda_setup
+# <<< conda initialize <<<
+
