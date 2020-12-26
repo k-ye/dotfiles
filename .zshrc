@@ -104,12 +104,30 @@ source $ZSH/oh-my-zsh.sh
 # Customization Point 
 # ===================
 
+# Show git branch. Refs:
+# https://www.themoderncoder.com/add-git-branch-information-to-your-zsh-prompt
+# https://stackoverflow.com/a/1128583/12003165
+# Load version control information
+autoload -Uz vcs_info
+
+# Format the vcs_info_msg_0_ variable
+zstyle ':vcs_info:git:*' formats '[%b]'
+
+# Set up the prompt (with git branch name)
+setopt PROMPT_SUBST
+vcs_info_wrapper() {
+  vcs_info
+  if [ -n "$vcs_info_msg_0_" ]; then
+    echo " %F{192}${vcs_info_msg_0_}"
+  fi
+}
+
 # Set up prompt with colors
 # https://linux.die.net/man/1/zshmisc
 # %n: username
 # %~: $PWD
 # Color code: https://stackoverflow.com/a/49752003/12003165
-PROMPT="%F{227}%n@%F{078}%~%{$reset_color%}% $ "
+PROMPT='%F{227}%n@%F{078}%~$(vcs_info_wrapper) %{$reset_color%}% $ '
 
 # Add CUDA 11.1 toolkits
 # https://docs.nvidia.com/cuda/archive/11.1.0/cuda-installation-guide-linux/index.html#environment-setup
@@ -134,3 +152,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export GITHUB_DIR="/home/yekuang/Github"
+export CPP_THIRDPARTY_LIBS="/home/yekuang/Libs"
+# shaderc binaries
+# https://github.com/google/shaderc
+export PATH="$CPP_THIRDPARTY_LIBS/shaderc-linux-gcc/install/bin:$PATH"

@@ -1,5 +1,6 @@
 set number
 set paste
+set mouse=a
 " Mosue select without line numbers
 set mouse+=r
 set showcmd
