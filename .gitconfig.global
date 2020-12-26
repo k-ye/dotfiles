@@ -1,8 +1,8 @@
 [core]
-	editor = vim
-	# https://stackoverflow.com/a/14118014/12003165
-	# Don't page if it is less than a page
-	pager = less -F -X
+  editor = vim
+  # https://stackoverflow.com/a/14118014/12003165
+  # Don't page if it is less than a page
+  pager = less -F -X
 
 [alias]
-        lg = log --graph --oneline --all
+  lg = log --graph --oneline --all
